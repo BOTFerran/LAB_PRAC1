@@ -8,7 +8,7 @@ public class Track {
 
     String id;
     String name;
-    Long lines;
+    Long likes;
     int duration;
     String genre;
 
@@ -17,7 +17,7 @@ public class Track {
     public Track(TrackDTO trackDTO){
         this.id = trackDTO.getId();
         this.name = trackDTO.getName();
-        this.lines = trackDTO.getLines();
+        this.likes = trackDTO.getLikes();
         this.duration = trackDTO.getDuration();
         this.genre = trackDTO.getGenre();
     }
@@ -38,12 +38,12 @@ public class Track {
         this.name = name;
     }
 
-    public Long getLines() {
-        return lines;
+    public Long getLikes() {
+        return likes;
     }
 
-    public void setLines(Long lines) {
-        this.lines = lines;
+    public void setLikes(Long likes) {
+        this.likes = likes;
     }
 
     public int getDuration() {

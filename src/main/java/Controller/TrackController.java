@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Controller {
+public class TrackController {
     private TrackRepository repository;
 
-    public Controller(TrackRepository repository){this.repository = repository;}
+    public TrackController(TrackRepository repository){this.repository = repository;}
 
     public TrackDTO createTrack(TrackDTO trackDTO){
         Track track = new Track(trackDTO);
@@ -23,9 +23,9 @@ public class Controller {
         repository.delete(repository.findById(id).get());
     }
 
-    public void editTrack(String id, String name, Long lines, int duration, String genre){
+    public void editTrack(String id, String name, Long likes, int duration, String genre){
         Track track = repository.findById(id).get();
-        TrackDTO updatedTrack = new TrackDTO(name, lines, duration, genre);
+        TrackDTO updatedTrack = new TrackDTO(name, likes, duration, genre);
         updatedTrack.setId(track.getId());
         repository.delete(track);
         repository.save(new Track(updatedTrack));
@@ -37,4 +37,8 @@ public class Controller {
         iterator.forEachRemaining(result::add);
         return result.stream().map(x -> new TrackDTO(x)).toList();
     }
+
+    public void deleteTracks(){ repository.deleteAll();}
+
+    public TrackDTO getTrack(String id){ return new TrackDTO(repository.findById(id).get());}
 }

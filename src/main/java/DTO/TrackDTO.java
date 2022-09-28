@@ -8,15 +8,15 @@ public class TrackDTO {
 
     private String id = UUID.randomUUID().toString();
     String name;
-    Long lines;
+    Long likes;
     String genre;
 
     int duration;
 
 
-    public TrackDTO(String name, Long lines, int duration, String genre){
+    public TrackDTO(String name, Long likes, int duration, String genre){
         this.name = name;
-        this.lines = lines;
+        this.likes = likes;
         this.duration = duration;
         this.genre = genre;
     }
@@ -24,7 +24,7 @@ public class TrackDTO {
     public TrackDTO(Track track){
         this.id = track.getId();
         this.name = track.getName();
-        this.lines = track.getLines();
+        this.likes = track.getLikes();
         this.duration = track.getDuration();
         this.genre = track.getGenre();
     }
@@ -45,12 +45,12 @@ public class TrackDTO {
         this.name = name;
     }
 
-    public Long getLines() {
-        return lines;
+    public Long getLikes() {
+        return likes;
     }
 
-    public void setLines(Long lines) {
-        this.lines = lines;
+    public void setLikes(Long likes) {
+        this.likes = likes;
     }
 
     public int getDuration() {
