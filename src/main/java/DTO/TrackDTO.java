@@ -1,8 +1,12 @@
 package DTO;
 
+import Domain.Track;
+
+import java.util.UUID;
+
 public class TrackDTO {
 
-    Long id;
+    private String id = UUID.randomUUID().toString();
     String name;
     Long lines;
     String genre;
@@ -10,19 +14,26 @@ public class TrackDTO {
     int duration;
 
 
-    public TrackDTO(Long id, String name, Long lines, int duration, String genre){
-        this.id = id;
+    public TrackDTO(String name, Long lines, int duration, String genre){
         this.name = name;
         this.lines = lines;
         this.duration = duration;
         this.genre = genre;
     }
 
-    public Long getId() {
+    public TrackDTO(Track track){
+        this.id = track.getId();
+        this.name = track.getName();
+        this.lines = track.getLines();
+        this.duration = track.getDuration();
+        this.genre = track.getGenre();
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

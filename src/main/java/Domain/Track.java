@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Track {
 
-    Long id;
+    String id;
     String name;
     Long lines;
     int duration;
@@ -22,11 +22,11 @@ public class Track {
         this.genre = trackDTO.getGenre();
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
