@@ -35,7 +35,7 @@ public class TrackRestController {
 
     @DeleteMapping("travels/{travelId}")
     public void deleteTracklById (@PathVariable String trackId) {
-        trackController.deleteTrack(trackID);
+        trackController.deleteTrack(trackId);
     }
 
 }
