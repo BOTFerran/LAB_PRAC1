@@ -14,28 +14,28 @@ public class TrackRestController {
     public TrackRestController (TrackController trackController) {this.trackController = trackController;}
 
     @PostMapping("travels")
-    public TrackDTO createTravel(@RequestBody TrackDTO trackDTO) throws Exception {
+    public TrackDTO createTrack(@RequestBody TrackDTO trackDTO) throws Exception {
         return this.trackController.createTrack(trackDTO);
     }
 
     @GetMapping("travels")
-    public List<TrackDTO> getAllTravels () {
-        return trackController.getAllTracks();
+    public List<TrackDTO> getAllTracks () {
+        return trackController.getTracks();
     }
 
     @DeleteMapping("travels")
-    public void deleteAllTravels () {
-        travelController.deleteAllTravels();
+    public void deleteAllTracks () {
+        trackController.deleteTracks();
     }
 
     @GetMapping("travels/{travelId}")
-    public TravelDTO getTravel (@PathVariable String travelId) {
-        return travelController.getTravel(travelId);
+    public TrackDTO getTrack (@PathVariable String trackId) {
+        return trackController.getTrack(trackId);
     }
 
     @DeleteMapping("travels/{travelId}")
-    public void deleteTravelById (@PathVariable String travelId) {
-        travelController.deleteTravel(travelId);
+    public void deleteTracklById (@PathVariable String trackId) {
+        trackController.deleteTrack(trackID);
     }
 
 }
